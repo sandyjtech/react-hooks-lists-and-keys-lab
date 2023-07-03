@@ -7,9 +7,16 @@ function ProjectList({ projects }) {
   return (
     <div id="projects">
       <h2>My Projects</h2>
-      <div id="project-list">
-        <ProjectItem/>        
-        </div>
+      <div id="projects-list">
+        {projects.map((project) => (
+          <ProjectItem
+            key={project.id} // Assuming each project has a unique id
+            name={project.name}
+            about={project.about}
+            technologies={project.technologies}
+          />
+        ))}
+      </div>
     </div>
   );
 }
